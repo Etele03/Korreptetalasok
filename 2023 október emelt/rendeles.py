@@ -71,7 +71,76 @@ n = 21
 
 print(f"A rendelt termékek darabszáma a {n}. napon PL: {osszes('PL', n)} TV: {osszes('TV', n)} NR: {osszes('NR', n)}")
 
+
 # 8. feladat
 print("8. feladat:")
 
-print("Napok\t 1..10\t 11..20\t 21..30")
+
+
+with open("kampany.txt", "w", encoding="utf-8") as file:
+    file.write("Napok\t 1..10\t 11..20\t 21..30\n")
+    print("Napok\t 1..10\t 11..20\t 21..30")
+
+    elso = []
+    masodik = []
+    harmadik = []
+
+    # elso sor
+
+    for sor in adatok:
+        if 1 <= int(sor[0]) <= 10 and sor[1] == 'PL':
+            elso.append(sor[0])
+
+    for sor in adatok:
+        if 11 <= int(sor[0]) <= 20 and sor[1] == 'PL':
+            masodik.append(sor[0])
+
+    for sor in adatok:
+        if 21 <= int(sor[0]) <= 30 and sor[1] == 'PL':
+            harmadik.append(sor[0])
+
+    file.write(f"PL\t {len(elso)}\t {len(masodik)}\t {len(harmadik)}\n")
+    print(f"PL\t {len(elso)}\t {len(masodik)}\t {len(harmadik)}")
+    elso.clear()
+    masodik.clear()
+    harmadik.clear()
+
+    # masodik sor
+
+    for sor in adatok:
+        if 1 <= int(sor[0]) <= 10 and sor[1] == 'TV':
+            elso.append(sor[0])
+
+    for sor in adatok:
+        if 11 <= int(sor[0]) <= 20 and sor[1] == 'TV':
+            masodik.append(sor[0])
+
+    for sor in adatok:
+        if 21 <= int(sor[0]) <= 30 and sor[1] == 'TV':
+            harmadik.append(sor[0])
+
+    file.write(f"TV\t {len(elso)}\t {len(masodik)}\t {len(harmadik)}\n")
+    print(f"TV\t {len(elso)}\t {len(masodik)}\t {len(harmadik)}")
+    elso.clear()
+    masodik.clear()
+    harmadik.clear()
+
+    # harmadik sor
+
+    for sor in adatok:
+        if 1 <= int(sor[0]) <= 10 and sor[1] == 'NR':
+            elso.append(sor[0])
+
+    for sor in adatok:
+        if 11 <= int(sor[0]) <= 20 and sor[1] == 'NR':
+            masodik.append(sor[0])
+
+    for sor in adatok:
+        if 21 <= int(sor[0]) <= 30 and sor[1] == 'NR':
+            harmadik.append(sor[0])
+
+    file.write(f"NR\t {len(elso)}\t {len(masodik)}\t {len(harmadik)}\n")
+    print(f"NR\t {len(elso)}\t {len(masodik)}\t {len(harmadik)}")
+    elso.clear()
+    masodik.clear()
+    harmadik.clear()
